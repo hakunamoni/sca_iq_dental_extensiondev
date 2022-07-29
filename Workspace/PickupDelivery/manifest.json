@@ -1,0 +1,50 @@
+{
+    "name": "PickupDelivery",
+    "fantasyName": "Pickup Delivery",
+    "vendor": "SameDayPickup",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.2.1",
+        "SCS": ">=20.2.1"
+    },
+    "description": "Display the same day pickup as a delivery method",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "templates": {
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/PickupDelivery/Templates/samedaypickup_pickupdelivery_pickupdelivery.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "checkout": "Modules/PickupDelivery/JavaScript/SameDayPickup.PickupDelivery.PickupDelivery.js"
+        },
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/PickupDelivery/JavaScript/SameDayPickup.PickupDelivery.PickupDelivery.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/PickupDelivery",
+    "suitescript2": {
+        "files": []
+    }
+}

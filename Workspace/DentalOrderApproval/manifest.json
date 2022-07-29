@@ -1,0 +1,53 @@
+{
+    "name": "DentalOrderApproval",
+    "fantasyName": "Dental.DentalOrderApproval",
+    "vendor": "IQDental",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.1.0",
+        "SCS": ">=20.1.0"
+    },
+    "description": "Manage Order Approval by supervisor",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/DentalOrderApproval/Sass/_dental-order-approval.scss"
+        },
+        "files": [
+            "Modules/DentalOrderApproval/Sass/_dental-order-approval.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/DentalOrderApproval/Templates/dental_confirmation_modal.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/DentalOrderApproval/JavaScript/Dental.DentalOrderApproval.DentalOrderApproval.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/DentalOrderApproval/JavaScript/Dental.DentalOrderApproval.DentalOrderApproval.js",
+                    "Modules/DentalOrderApproval/JavaScript/Dental.DentalOrderApproval.Confirmation.View.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/DentalOrderApproval"
+}

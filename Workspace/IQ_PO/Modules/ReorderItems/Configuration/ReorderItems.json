@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "ReorderItems.config": {
+            "group": "extensions",
+            "subtab": "ReorderItems_subtab",
+            "type": "string",
+            "title": "ReorderItems_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

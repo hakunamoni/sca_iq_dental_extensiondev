@@ -1,0 +1,78 @@
+{
+    "name": "DentalRegister",
+    "fantasyName": "Dental Register",
+    "vendor": "CustomRegistration",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCS,SCA",
+    "target_version": {
+        "SCS": ">=20.2.1",
+        "SCA": ">=20.2.1"
+    },
+    "description": "Adds additional fields to the registration form",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/DentalRegister/Templates/customregistration_dentalregister_dentalregister_loginregister.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/DentalRegister/Templates/customregistration_dentalregister_dentalregister_loginregister.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/DentalRegister/Templates/customregistration_dentalregister_dentalregister_loginregister.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.js",
+            "myaccount": "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.js",
+            "checkout": "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.Checkout.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.js",
+                    "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.Checkout.js",
+                    "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.LoginRegister.View.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.js",
+                    "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.Checkout.js",
+                    "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.LoginRegister.View.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.js",
+                    "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.Checkout.js",
+                    "Modules/DentalRegister/JavaScript/CustomRegistration.DentalRegister.DentalRegister.LoginRegister.View.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/DentalRegister",
+    "suitescript2": {
+        "files": []
+    }
+}

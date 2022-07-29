@@ -1,0 +1,59 @@
+{
+    "name": "CliaNumber",
+    "fantasyName": "CLIA Number",
+    "vendor": "IQDental",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.2.1",
+        "SCS": ">=20.2.1"
+    },
+    "description": "Display the CLIA # for NRG-02071",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "checkout": "Modules/CliaNumber/Sass/_clianumber-clianumber.scss"
+        },
+        "files": [
+            "Modules/CliaNumber/Sass/_clianumber-clianumber.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/CliaNumber/Templates/iqdental_clianumber_clianumber.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "checkout": "Modules/CliaNumber/JavaScript/IQDental.CliaNumber.CliaNumber.js"
+        },
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/CliaNumber/JavaScript/IQDental.CliaNumber.CliaNumber.js",
+                    "Modules/CliaNumber/JavaScript/IQDental.CliaNumber.CliaNumber.View.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/CliaNumber",
+    "suitescript2": {
+        "files": []
+    }
+}

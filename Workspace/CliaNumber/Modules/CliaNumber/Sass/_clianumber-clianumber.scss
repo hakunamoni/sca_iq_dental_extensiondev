@@ -1,0 +1,11 @@
+.clianumber-title {
+    @extend .order-wizard-title;
+}
+
+.clianumber-container {
+    @extend .box-column;
+}
+
+.clianumber-input {
+    @extend .input-large;
+}
