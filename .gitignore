@@ -6,7 +6,6 @@ bin-release/
 
 # dependencies
 node_modules/
-ns_npm_repository/
 LocalDistribution/
 tmp/
 
