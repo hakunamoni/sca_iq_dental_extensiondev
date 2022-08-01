@@ -56,7 +56,8 @@
                     "Modules/Main/JavaScript/IQ.PO.Main.js",
                     "Modules/ReorderItems/JavaScript/IQ.PO.ReorderItems.List.View.js",
                     "Modules/ReorderItems/JavaScript/IQ.PO.ReorderItems.Model.js",
-                    "Modules/ListHeader/JavaScript/IQ.PO.ListHeader.View.js"
+                    "Modules/ListHeader/JavaScript/IQ.PO.ListHeader.View.js",
+                    "Modules/ReorderItems/JavaScript/IQ.PO.ReorderItems.Collection.js"
                 ]
             }
         }

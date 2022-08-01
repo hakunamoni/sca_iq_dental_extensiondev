@@ -4,6 +4,7 @@ define("IQ.PO.ListHeader.View", [
   "Backbone",
   "Utils",
   "UrlHelper",
+  "AjaxRequestsKiller",
   "underscore",
   "jQuery",
 ], function (
@@ -12,6 +13,7 @@ define("IQ.PO.ListHeader.View", [
   BackboneView,
   Utils,
   UrlHelper,
+  AjaxRequestsKiller,
   _,
   $
 ) {
@@ -32,109 +34,135 @@ define("IQ.PO.ListHeader.View", [
           'keyup [data-type="list-header-view-sku-input"]': "skuInputHandler",
         }),
 
-        // // when rendering we need to check
-        // // if there are options already set up in the url
+        // when rendering we need to check
+        // if there are options already set up in the url
         // render: function () {
-        //   // if there are no items in the collection, avoid rendering the list header
-        //   if (this.totalCount === 0) {
-        //     return;
-        //   }
+        render: _.wrap(ListHeaderView.prototype.render, function (fn) {
+          console.log("this:render", this);
 
-        //   if (
-        //     !this.selectedFilter &&
-        //     !this.selectedSort &&
-        //     !this.order &&
-        //     !this.sku &&
-        //     !this.selectedRange &&
-        //     !this.selectedDisplay
-        //   ) {
-        //     this.setSelecteds();
+          // if there are no items in the collection, avoid rendering the list header
+          if (this.totalCount === 0) {
+            return;
+          }
 
-        //     // after we set the current status
-        //     // we update the collection
-        //     if (!this.avoidFirstFetch) {
-        //       this.updateCollection();
-        //     }
-        //   }
+          if (
+            !this.selectedFilter &&
+            !this.selectedSort &&
+            !this.order &&
+            !this.sku &&
+            !this.selectedRange &&
+            !this.selectedDisplay
+          ) {
+            this.setSelecteds();
 
-        //   this._render();
+            // after we set the current status
+            // we update the collection
+            if (!this.avoidFirstFetch) {
+              this.updateCollection();
+            }
+          }
 
-        //   this.updateCalendarButtons();
+          this._render();
 
-        //   if (this.options.customFilterHandler) {
-        //     this.options.customFilterHandler(
-        //       this.selectedFilter,
-        //       this.getElementSort()
-        //     );
-        //   }
-        // },
+          this.updateCalendarButtons();
 
-        // // @method updateCollection
-        // // the collection used by the view MUST have an update method
-        // // this method is going to be called whenever a sort/filter value changes
-        // // @return {ListHeader.View} Returns itself
+          if (this.options.customFilterHandler) {
+            this.options.customFilterHandler(
+              this.selectedFilter,
+              this.getElementSort()
+            );
+          }
+
+          fn.apply(this, _.toArray(arguments).slice(1));
+        }),
+
+        // @method updateCollection
+        // the collection used by the view MUST have an update method
+        // this method is going to be called whenever a sort/filter value changes
+        // @return {ListHeader.View} Returns itself
         // updateCollection: function () {
-        //   let range = null;
-        //   const { collection } = this;
+        updateCollection: _.wrap(
+          ListHeaderView.prototype.updateCollection,
+          function (fn) {
+            // fn.apply(this, _.toArray(arguments).slice(1));
+            let range = null;
+            const { collection } = this;
 
-        //   if (this.selectedRange) {
-        //     // @class RangeFilter
-        //     // If there is no date selected i keep the range empty in order to get "transactions" dated in the future
-        //     range = {
-        //       // @property {String} from
-        //       from:
-        //         this.selectedRange.from ||
-        //         (this.allowEmptyBoundaries ? "" : this.rangeFilterOptions.fromMin),
-        //       // @property {String} to
-        //       to:
-        //         this.selectedRange.to ||
-        //         (this.allowEmptyBoundaries ? "" : this.rangeFilterOptions.toMax),
-        //     };
-        //   }
+            console.log("this:updateCollection", this);
+            console.log("this:collection", collection);
 
-        //   // @lass Collection.Filter
-        //   collection.update &&
-        //     collection.update(
-        //       {
-        //         // @property {value:String} filter
-        //         filter: this.selectedFilter,
-        //         // @property {RangeFilter} range
-        //         range: range,
-        //         // @property {value:String} sort
-        //         sort: this.selectedSort,
-        //         // @property {String} order
-        //         order: this.order,
-        //         sku: this.sku,
-        //         page: this.page,
-        //         // @property {Number} killerId
-        //         killerId: AjaxRequestsKiller.getKillerId(),
-        //       },
-        //       this
-        //     );
+            if (this.selectedRange) {
+              // @class RangeFilter
+              // If there is no date selected i keep the range empty in order to get "transactions" dated in the future
+              range = {
+                // @property {String} from
+                from:
+                  this.selectedRange.from ||
+                  (this.allowEmptyBoundaries
+                    ? ""
+                    : this.rangeFilterOptions.fromMin),
+                // @property {String} to
+                to:
+                  this.selectedRange.to ||
+                  (this.allowEmptyBoundaries
+                    ? ""
+                    : this.rangeFilterOptions.toMax),
+              };
+            }
+            // @lass Collection.Filter
+            collection.update &&
+              collection.update(
+                {
+                  // @property {value:String} filter
+                  filter: this.selectedFilter,
+                  // @property {RangeFilter} range
+                  range: range,
+                  // @property {value:String} sort
+                  sort: this.selectedSort,
+                  // @property {String} order
+                  order: this.order,
+                  // sku: this.sku,
+                  page: this.page,
+                  // @property {Number} killerId
+                  killerId: AjaxRequestsKiller.getKillerId(),
+                },
+                this
+              );
+            console.log("this:collection.update", collection.update);
 
-        //   // @class ListHeader.View
-        //   return this;
-        // },
+            // @class ListHeader.View
+            return this;
+            // return fn.apply(this, _.toArray(arguments).slice(1));
+          }
+        ),
 
-        // // @method setSelecteds set the selected rows from url information
+        // @method setSelecteds set the selected rows from url information
         // setSelecteds: function () {
-        //   const url_options = Utils.parseUrlOptions(Backbone.history.fragment);
+        setSelecteds: _.wrap(
+          ListHeaderView.prototype.setSelecteds,
+          function (fn) {
+            const url_options = Utils.parseUrlOptions(
+              Backbone.history.fragment
+            );
 
-        //   this.selectedFilter = this.getFilterFromUrl(url_options.filter);
-        //   this.selectedRange = this.getInitialDateRange(url_options.range) || {};
-        //   this.selectedSort = this.getSortFromUrl(url_options.sort);
-        //   this.order = this.getOrderFromUrl(url_options.order);
-        //   this.sku = url_options.sku;
-        //   this.page = this.getPageFromUrl(url_options.page);
+            // this.selectedFilter = this.getFilterFromUrl(url_options.filter);
+            // this.selectedRange = this.getInitialDateRange(url_options.range) || {};
+            // this.selectedSort = this.getSortFromUrl(url_options.sort);
+            // this.order = this.getOrderFromUrl(url_options.order);
+            this.sku = url_options.sku;
+            // this.page = this.getPageFromUrl(url_options.page);
 
-        //   this.selectedDisplay = this.getDisplayFromUrl(url_options.display);
-        // },
+            console.log("this:setSelecteds", this);
+            // this.selectedDisplay = this.getDisplayFromUrl(url_options.display);
+            return fn.apply(this, _.toArray(arguments).slice(1));
+          }
+        ),
 
         // @method skuInputHandler method called when sku input search change
         skuInputHandler: function (e) {
-          if (e.target.value.length < 3) {
-            return;
-          }
+          // if (e.target.value.length < 3) {
+          //   return;
+          // }
           // sets the selected filter
           this.sku = e.target.value;
           // updates the url and the collection

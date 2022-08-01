@@ -67,9 +67,7 @@
 						</label>
 					{{/if}}
 
-          <div class="list-header-view-sku">
             <input class="list-header-view-input" type="text" name="sku" data-type="list-header-view-sku-input">
-          </div>
 
 				</div>
 			</div>

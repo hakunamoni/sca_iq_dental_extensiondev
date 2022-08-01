@@ -4,6 +4,7 @@ define("IQ.PO.ReorderItems.List.View", [
   "ReorderItems.List.View",
   "ListHeader.View",
   "IQ.PO.ReorderItems.Model",
+  "ReorderItems.Collection",
 
   "Backbone",
   "Utils",
@@ -14,6 +15,7 @@ define("IQ.PO.ReorderItems.List.View", [
   ReorderItemsListView,
   ListHeaderView,
   IQPOReorderItemsModel,
+  ReorderItemsCollection,
 
   Backbone,
   Utils,
@@ -30,6 +32,8 @@ define("IQ.PO.ReorderItems.List.View", [
           ReorderItemsListView.prototype.initialize,
           function (fn) {
             fn.apply(this, _.toArray(arguments).slice(1));
+
+            this.collection = new ReorderItemsCollection();
 
             console.log("prior filterOptions", this.filterOptions);
             var isShowAll = false;
@@ -81,6 +85,8 @@ define("IQ.PO.ReorderItems.List.View", [
               headerMarkup: routerOptions.order_id ? this.getOrderLink() : "",
             });
             console.log("updated listHeader", this.listHeader);
+
+            console.log("updated collection", this.collection);
           }
         ),
 
