@@ -1,33 +1,26 @@
 define("IQ.PO.ReorderItems.Collection", [
   "ReorderItems.Collection",
   "ReorderItems.Model",
-  "Backbone",
   "Utils",
-  "UrlHelper",
-  "underscore",
-  "jQuery",
+  "underscore"
 ], function (
   ReorderItemsCollection,
   ReorderItemsModel,
-  BackboneView,
   Utils,
-  UrlHelper,
   _,
-  $
 ) {
   "use strict";
+
   return {
     loadModule: function (container) {
+      console.log('ReorderItemsCollection.prototype', ReorderItemsCollection.prototype);
       _.extend(ReorderItemsCollection.prototype, {
         // url: Utils.getAbsoluteUrl(
         //   getExtensionAssetsPath("services/ReorderItems.Service.ss"),
         //   true
         // ),
-        //   "services/ReorderItems.Service.ss",
 
-        model: ReorderItemsModel,
-
-        update: _.wrap(ReorderItemsCollection.prototype.update, function (fn) {
+        update1: _.wrap(ReorderItemsCollection.prototype.update, function (fn) {
           var params = fn.apply(this, _.toArray(arguments).slice(1));
           console.log("update params", params);
 
