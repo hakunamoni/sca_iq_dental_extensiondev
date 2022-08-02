@@ -23,7 +23,7 @@ define("IQ.PO.ReorderItems.Model", [
   // @extends SCModel
   return SCModel.extend({
     // @property {String} name
-    name: "OrderItem",
+    name: "IQ.PO.OrderItem",
 
     // @property {Boolean} isMultiSite
     isMultiSite: ModelsInit.context.getFeature("MULTISITE"),

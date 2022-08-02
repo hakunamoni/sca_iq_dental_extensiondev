@@ -1,13 +1,10 @@
 define("IQ.PO.ReorderItems.ServiceController", [
   "ServiceController",
-  "IQ.PO.ReorderItems.Model",
+  "ReorderItems.Model",
   "SiteSettings.Model",
 ], function (ServiceController, ReorderItemsModel, SiteSettingsModel) {
-  // @class ReorderItems.ServiceController Manage reorder items requests
-  // @extend ServiceController
   return ServiceController.extend({
-    // @property {String} name Mandatory for all ssp-libraries model
-    name: "ReorderItems.ServiceController",
+    name: "IQ.PO.ReorderItems.ServiceController",
 
     // @property {Service.ValidationOptions} options. All the required validation, permissions, etc.
     // The values in this object are the validation needed for the current service.
