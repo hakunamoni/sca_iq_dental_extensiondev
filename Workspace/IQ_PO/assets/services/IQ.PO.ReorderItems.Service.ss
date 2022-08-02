@@ -3,11 +3,12 @@ function service(request, response)
 	'use strict';
 	try
 	{
-		require('CT.PRD.ReorderItems.ServiceController').handle(request, response);
+		console.log('IQ.PO.ReorderItems.ServiceController try');
+		require('IQ.PO.ReorderItems.ServiceController').handle(request, response);
 	}
 	catch(ex)
 	{
-		console.log('CT.PRD.ReorderItems.ServiceController ', ex);
+		console.log('IQ.PO.ReorderItems.ServiceController ', ex);
 		var controller = require('ServiceController');
 		controller.response = response;
 		controller.request = request;

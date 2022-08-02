@@ -94,7 +94,11 @@
         "domain": "www.iqdentalsupply.com",
         "webapp_id": "1196486",
         "ssp_folder": "1196486",
-        "is_scis": false
+        "is_scis": false,
+        "target_folder": {
+            "parentId": "-15",
+            "folderName": "Deploy_Extensions"
+        }
     },
     "nsdeployPath": ".nsdeploy"
 }
