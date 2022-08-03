@@ -23,7 +23,7 @@ define("IQ.PO.ReorderItems.Model", [
   // @extends SCModel
   return SCModel.extend({
     // @property {String} name
-    name: "OrderItem",
+    name: "IQ.PO.OrderItem",
 
     // @property {Boolean} isMultiSite
     isMultiSite: ModelsInit.context.getFeature("MULTISITE"),
@@ -103,7 +103,7 @@ define("IQ.PO.ReorderItems.Model", [
         const site_id = ModelsInit.session.getSiteSettings(["siteid"]).siteid;
         const filter_site_option = Configuration.get("filterSite.option");
         const filter_site_ids = Configuration.get("filterSite.ids");
-        let search_filter_array = null;
+        var search_filter_array = null;
 
         if (filter_site_option === "current") {
           search_filter_array = [site_id, "@NONE@"];
@@ -157,7 +157,7 @@ define("IQ.PO.ReorderItems.Model", [
 
       if (query_filters.sku) {
         filters.sku_operator = "and";
-        filters.sku = ["displayname", "contains", query_filters.sku];
+        filters.sku = ["item.item_display", "contains", query_filters.sku];
       }
 
       // select field to sort by
@@ -232,6 +232,8 @@ define("IQ.PO.ReorderItems.Model", [
           // @class ReorderItems.Model
         });
       }
+
+      console.log("result", result);
 
       return result;
     },

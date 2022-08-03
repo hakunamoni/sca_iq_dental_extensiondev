@@ -10,10 +10,7 @@ define("IQ.PO.ReorderItems.Model", ["ReorderItems.Model"], function (
     loadModule: function (container) {
       _.extend(ReorderItemsModel.prototype, {
         urlRoot: Utils.getAbsoluteUrl(
-          getExtensionAssetsPath(
-            "assets/services/IQ.PO.ReorderItems.Service.ss"
-          ),
-          true
+          getExtensionAssetsPath("services/IQ.PO.ReorderItems.Service.ss")
         ),
       });
     },

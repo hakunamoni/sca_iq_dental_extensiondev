@@ -100,5 +100,6 @@
             "folderName": "Deploy_Extensions"
         }
     },
-    "nsdeployPath": ".nsdeploy"
+    "nsdeployPath": ".nsdeploy",
+    "product": "gulp"
 }

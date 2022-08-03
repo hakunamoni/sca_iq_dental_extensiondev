@@ -65,14 +65,12 @@
         }
     },
     "ssp-libraries": {
-        "entry_point": "Modules/ReorderItems/SuiteScript/IQ.PO.ReorderItems.Model.js",
+        "entry_point": "Modules/Main/SuiteScript/IQ.PO.Main.js",
         "files": [
             "Modules/ReorderItems/SuiteScript/IQ.PO.ReorderItems.Model.js",
-            "Modules/ReorderItems/SuiteScript/IQ.PO.ReorderItems.ServiceController.js"
+            "Modules/ReorderItems/SuiteScript/IQ.PO.ReorderItems.ServiceController.js",
+            "Modules/Main/SuiteScript/IQ.PO.Main.js"
         ]
     },
-    "local_folder": "Workspace/IQ_PO",
-    "suitescript2": {
-        "files": []
-    }
+    "local_folder": "Workspace/IQ_PO"
 }

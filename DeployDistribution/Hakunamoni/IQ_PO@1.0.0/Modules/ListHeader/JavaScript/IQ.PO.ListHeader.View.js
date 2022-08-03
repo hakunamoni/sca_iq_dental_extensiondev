@@ -72,8 +72,9 @@ define("IQ.PO.ListHeader.View", [
               this.getElementSort()
             );
           }
+          console.log("this:render this.options", this.options);
 
-          fn.apply(this, _.toArray(arguments).slice(1));
+          // fn.apply(this, _.toArray(arguments).slice(1));
         }),
 
         // @method updateCollection
@@ -128,7 +129,7 @@ define("IQ.PO.ListHeader.View", [
                 },
                 this
               );
-            console.log("this:collection.update", collection.update);
+            console.log("this:collection.update", collection);
 
             // @class ListHeader.View
             return this;
@@ -154,7 +155,7 @@ define("IQ.PO.ListHeader.View", [
 
             console.log("this:setSelecteds", this);
             // this.selectedDisplay = this.getDisplayFromUrl(url_options.display);
-            return fn.apply(this, _.toArray(arguments).slice(1));
+            fn.apply(this, _.toArray(arguments).slice(1));
           }
         ),
 
@@ -183,6 +184,8 @@ define("IQ.PO.ListHeader.View", [
               : UrlHelper.UrlHelper.removeUrlParameter(url, "sku");
 
           Backbone.history.navigate(url, { trigger: false });
+
+          console.log("this:updateUrl", url);
 
           return fn.apply(this, _.toArray(arguments).slice(1));
           // return this.updateCollection();
