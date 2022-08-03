@@ -1,6 +1,6 @@
 define("IQ.PO.ReorderItems.ServiceController", [
   "ServiceController",
-  "ReorderItems.Model",
+  "IQ.PO.ReorderItems.Model",
   "SiteSettings.Model",
 ], function (ServiceController, ReorderItemsModel, SiteSettingsModel) {
   return ServiceController.extend({

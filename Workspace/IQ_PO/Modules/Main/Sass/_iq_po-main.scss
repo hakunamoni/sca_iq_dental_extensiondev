@@ -5,14 +5,17 @@
 	Example:
 	@import "other-sass-file.scss";
 	@import "../../<other module>/Sass/other-sass-file.scss";
-*/ 
+*/
+
+@import "../../ListHeader/Sass/iq-po-list-header-sku-search";
+@import "../../ReorderItems/Sass/_iq_po-reorderitems";
 
 .main-info-card {
-    @extend .info-card;
+  @extend .info-card;
 }
 
 .main-info-card-content {
-    @extend .info-card-content;
-    color: $sc-color-secondary;
-    font-weight: bold;
+  @extend .info-card-content;
+  color: $sc-color-secondary;
+  font-weight: bold;
 }

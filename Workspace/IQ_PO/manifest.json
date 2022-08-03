@@ -35,7 +35,8 @@
         },
         "files": [
             "Modules/Main/Sass/_iq_po-main.scss",
-            "Modules/ReorderItems/Sass/_iq_po-reorderitems.scss"
+            "Modules/ReorderItems/Sass/_iq_po-reorderitems.scss",
+            "Modules/ListHeader/Sass/iq-po-list-header-sku-search.scss"
         ]
     },
     "templates": {

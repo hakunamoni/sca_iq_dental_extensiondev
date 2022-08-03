@@ -26,6 +26,7 @@ define("IQ.PO.ListHeader.View", [
           fn.apply(this, _.toArray(arguments).slice(1));
 
           this.searchable = _.toArray(arguments).slice(1)[0].searchable;
+          this.sku = _.toArray(arguments).slice(1)[0].sku;
         }),
 
         // @property {Object} events
@@ -187,14 +188,15 @@ define("IQ.PO.ListHeader.View", [
 
           console.log("this:updateUrl", url);
 
-          return fn.apply(this, _.toArray(arguments).slice(1));
-          // return this.updateCollection();
+          fn.apply(this, _.toArray(arguments).slice(1));
+          return this.updateCollection();
         }),
 
         getContext: _.wrap(ListHeaderView.prototype.getContext, function (fn) {
           var context = fn.apply(this, _.toArray(arguments).slice(1));
 
           context.searchable = this.searchable;
+          context.sku = this.sku;
 
           return context;
         }),

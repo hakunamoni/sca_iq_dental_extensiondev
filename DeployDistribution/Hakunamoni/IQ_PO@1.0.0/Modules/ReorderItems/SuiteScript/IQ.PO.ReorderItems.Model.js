@@ -23,7 +23,7 @@ define("IQ.PO.ReorderItems.Model", [
   // @extends SCModel
   return SCModel.extend({
     // @property {String} name
-    name: "OrderItem",
+    name: "IQ.PO.OrderItem",
 
     // @property {Boolean} isMultiSite
     isMultiSite: ModelsInit.context.getFeature("MULTISITE"),
@@ -157,7 +157,11 @@ define("IQ.PO.ReorderItems.Model", [
 
       if (query_filters.sku) {
         filters.sku_operator = "and";
-        filters.sku = ["item.item_display", "contains", query_filters.sku];
+        filters.sku = [
+          [["item.displayname", "contains", query_filters.sku]],
+          "or",
+          [["item.name", "contains", query_filters.sku]],
+        ];
       }
 
       // select field to sort by

@@ -33,8 +33,6 @@ define("IQ.PO.ReorderItems.List.View", [
           function (fn) {
             fn.apply(this, _.toArray(arguments).slice(1));
 
-            this.collection = new ReorderItemsCollection();
-
             console.log("prior filterOptions", this.filterOptions);
             var isShowAll = false;
             this.filterOptions.forEach(function (filterOption) {
@@ -65,22 +63,17 @@ define("IQ.PO.ReorderItems.List.View", [
             } else {
               routerOptions = { page: 1 };
             }
-            this.options.showCurrentPage = true;
 
-            if (routerOptions.order_id) {
-              this.collection.order_id = routerOptions.order_id;
-              this.order_id = routerOptions.order_id;
-              this.order_number = routerOptions.order_number || 0;
-            }
             this.listHeader = new ListHeaderView({
               view: this,
-              application: options.application,
+              application: this.application,
               collection: this.collection,
               filters: routerOptions.order_id ? null : this.filterOptions,
               sorts: routerOptions.order_id
                 ? this.sortOptionsSingleOrder
                 : this.sortOptions,
               searchable: true,
+              sku: this.sku,
               hidePagination: true,
               headerMarkup: routerOptions.order_id ? this.getOrderLink() : "",
             });

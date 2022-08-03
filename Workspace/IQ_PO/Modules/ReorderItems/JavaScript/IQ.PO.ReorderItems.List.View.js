@@ -73,6 +73,7 @@ define("IQ.PO.ReorderItems.List.View", [
                 ? this.sortOptionsSingleOrder
                 : this.sortOptions,
               searchable: true,
+              sku: this.sku,
               hidePagination: true,
               headerMarkup: routerOptions.order_id ? this.getOrderLink() : "",
             });
