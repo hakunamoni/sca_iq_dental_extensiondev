@@ -8,6 +8,9 @@ bin-release/
 node_modules/
 LocalDistribution/
 tmp/
+DeployDistribution/
+gulp/
+ns_npm_repository/
 
 # Other files and folders
 .settings/
