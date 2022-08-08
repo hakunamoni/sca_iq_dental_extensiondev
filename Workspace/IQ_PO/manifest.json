@@ -2,14 +2,15 @@
     "name": "IQ_PO",
     "fantasyName": "IQ Dental - Purchases",
     "vendor": "Hakunamoni",
+    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=22.1.0",
         "SCS": ">=22.1.0"
     },
-    "version": "1.0.0",
     "description": "Customized and enhanced reorder items header related features for IQ Dental Supply",
+    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -28,16 +29,6 @@
             "Modules/ReorderItems/Configuration/ReorderItems.json"
         ]
     },
-    "templates": {
-        "application": {
-            "myaccount": {
-                "files": [
-                    "Modules/ReorderItems/Templates/iq_po_reorderitems.tpl",
-                    "Modules/ListHeader/Templates/iq_po_list_header_view.tpl"
-                ]
-            }
-        }
-    },
     "sass": {
         "entry_points": {
             "myaccount": "Modules/Main/Sass/_iq_po-main.scss"
@@ -47,6 +38,16 @@
             "Modules/ReorderItems/Sass/_iq_po-reorderitems.scss",
             "Modules/ListHeader/Sass/iq-po-list-header-sku-search.scss"
         ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/ReorderItems/Templates/iq_po_reorderitems.tpl",
+                    "Modules/ListHeader/Templates/iq_po_list_header_view.tpl"
+                ]
+            }
+        }
     },
     "javascript": {
         "entry_points": {
@@ -71,5 +72,6 @@
             "Modules/ReorderItems/SuiteScript/IQ.PO.ReorderItems.ServiceController.js",
             "Modules/Main/SuiteScript/IQ.PO.Main.js"
         ]
-    }
+    },
+    "local_folder": "Workspace/IQ_PO"
 }
