@@ -69,7 +69,11 @@
 
 					{{#if searchable}}
 						<label class="list-header-view-filters">
-            	<input class="list-header-view-input" type="text" name="sku" data-type="list-header-view-sku-input" value="{{sku}}" placeholder="Search By SKU">
+							<button class="list-header-view-search-button" data-action="filter-by-sku"> Go
+							</button>
+						</label>
+						<label class="list-header-view-filters">
+            	<input class="list-header-view-search-box" type="text" name="sku" data-type="list-header-view-sku-input" value="{{sku}}" placeholder="Search By SKU">
 						</label>
 					{{/if}}
 				</div>

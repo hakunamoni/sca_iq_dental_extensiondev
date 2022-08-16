@@ -31,15 +31,16 @@ define("IQ.PO.ListHeader.View", [
 
         // @property {Object} events
         events: _.extend(ListHeaderView.prototype.events, {
-          'change [data-type="list-header-view-sku-input"]': "skuInputHandler",
-          'keyup [data-type="list-header-view-sku-input"]': "skuInputHandler",
+          'click [data-action="filter-by-sku"]': "skuInputBtnHandler",
+          // 'change [data-type="list-header-view-sku-input"]': "skuInputBoxHandler",
+          // 'keyup [data-type="list-header-view-sku-input"]': "skuInputBoxHandler",
         }),
 
         // when rendering we need to check
         // if there are options already set up in the url
         // render: function () {
         render: _.wrap(ListHeaderView.prototype.render, function (fn) {
-          console.log("this:render", this);
+          // console.log("this:render", this);
 
           // if there are no items in the collection, avoid rendering the list header
           if (this.totalCount === 0) {
@@ -73,7 +74,7 @@ define("IQ.PO.ListHeader.View", [
               this.getElementSort()
             );
           }
-          console.log("this:render this.options", this.options);
+          // console.log("this:render this.options", this.options);
 
           // fn.apply(this, _.toArray(arguments).slice(1));
         }),
@@ -90,8 +91,8 @@ define("IQ.PO.ListHeader.View", [
             let range = null;
             const { collection } = this;
 
-            console.log("this:updateCollection", this);
-            console.log("this:collection", collection);
+            // console.log("this:updateCollection", this);
+            // console.log("this:collection", collection);
 
             if (this.selectedRange) {
               // @class RangeFilter
@@ -130,7 +131,7 @@ define("IQ.PO.ListHeader.View", [
                 },
                 this
               );
-            console.log("this:collection.update", collection);
+            // console.log("this:collection.update", collection);
 
             // @class ListHeader.View
             return this;
@@ -154,19 +155,27 @@ define("IQ.PO.ListHeader.View", [
             this.sku = url_options.sku;
             // this.page = this.getPageFromUrl(url_options.page);
 
-            console.log("this:setSelecteds", this);
+            // console.log("this:setSelecteds", this);
             // this.selectedDisplay = this.getDisplayFromUrl(url_options.display);
             fn.apply(this, _.toArray(arguments).slice(1));
           }
         ),
 
-        // @method skuInputHandler method called when sku input search change
-        skuInputHandler: function (e) {
-          // if (e.target.value.length < 3) {
-          //   return;
-          // }
+        // // @method skuInputBoxHandler method called when sku search input change
+        // skuInputBoxHandler: function (e) {
+        //   // if (e.target.value.length < 3) {
+        //   //   return;
+        //   // }
+        //   // sets the selected filter
+        //   this.sku = e.target.value;
+        //   // updates the url and the collection
+        //   this.updateUrl();
+        // },
+
+        // @method skuInputBtnHandler method called when sku search button change
+        skuInputBtnHandler: function (e) {
           // sets the selected filter
-          this.sku = e.target.value;
+          this.sku = this.$('[data-type="list-header-view-sku-input"]').val();
           // updates the url and the collection
           this.updateUrl();
         },
@@ -186,7 +195,7 @@ define("IQ.PO.ListHeader.View", [
 
           Backbone.history.navigate(url, { trigger: false });
 
-          console.log("this:updateUrl", url);
+          // console.log("this:updateUrl", url);
 
           fn.apply(this, _.toArray(arguments).slice(1));
           return this.updateCollection();

@@ -33,7 +33,7 @@ define("IQ.PO.ReorderItems.List.View", [
           function (fn) {
             fn.apply(this, _.toArray(arguments).slice(1));
 
-            console.log("prior filterOptions", this.filterOptions);
+            // console.log("prior filterOptions", this.filterOptions);
             var isShowAll = false;
             this.filterOptions.forEach(function (filterOption) {
               filterOption.selected = false;
@@ -53,9 +53,9 @@ define("IQ.PO.ReorderItems.List.View", [
                 selected: true,
               });
             }
-            console.log("updated filterOptions", this.filterOptions);
+            // console.log("updated filterOptions", this.filterOptions);
 
-            console.log("prior listHeader", this.listHeader);
+            // console.log("prior listHeader", this.listHeader);
             var options = _.toArray(arguments).slice(1)[0];
             var routerOptions;
             if (options.routerArguments && options.routerArguments[0]) {
@@ -77,9 +77,9 @@ define("IQ.PO.ReorderItems.List.View", [
               hidePagination: true,
               headerMarkup: routerOptions.order_id ? this.getOrderLink() : "",
             });
-            console.log("updated listHeader", this.listHeader);
+            // console.log("updated listHeader", this.listHeader);
 
-            console.log("updated collection", this.collection);
+            // console.log("updated collection", this.collection);
           }
         ),
 
