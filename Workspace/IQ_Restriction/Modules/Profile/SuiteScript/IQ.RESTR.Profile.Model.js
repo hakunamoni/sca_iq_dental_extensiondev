@@ -7,7 +7,8 @@ define("IQ.RESTR.Profile.Model", ["Profile.Model", "underscore"], function (
       var profile = fn.apply(this, _.toArray(arguments).slice(1));
 
       var isLoggedIn = profile["isLoggedIn"];
-      var approvedItems = {};
+      var isRestricted = false;
+      var approvedItems = [];
       if (isLoggedIn) {
         var stSuiteletUrl = nlapiResolveURL(
           "SUITELET",
@@ -27,10 +28,12 @@ define("IQ.RESTR.Profile.Model", ["Profile.Model", "underscore"], function (
         //   profile["internalid"],
         //   JSON.parse(response.getBody())
         // );
-
-        approvedItems = JSON.parse(response.getBody());
+        var respData = JSON.parse(response.getBody());
+        isRestricted = respData.isRestricted;
+        approvedItems = respData.items;
       }
 
+      profile.isRestricted = isRestricted;
       profile.approvedItems = approvedItems;
 
       return profile;

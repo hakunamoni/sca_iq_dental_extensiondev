@@ -2,15 +2,14 @@
     "name": "IQ_Restriction",
     "fantasyName": "IQ Dental - Restriction",
     "vendor": "Hakunamoni",
-    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=22.1.0",
         "SCS": ">=22.1.0"
     },
+    "version": "1.0.0",
     "description": "Restrict unapproved items for IQ Dental Supply",
-    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -22,18 +21,6 @@
     "configuration": {
         "files": [
             "Modules/FacetsItemCell/Configuration/IQ.RESTR.Facets.ItemCell.json"
-        ]
-    },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/Main/Sass/_iq_restr-main.scss",
-            "myaccount": "Modules/Main/Sass/_iq_restr-main.scss",
-            "checkout": "Modules/Main/Sass/_iq_restr-main.scss"
-        },
-        "files": [
-            "Modules/RestrictionMessage/Sass/_iq_restr-restriction-message.scss",
-            "Modules/FacetsItemCell/Sass/_iq_restriction-facets.scss",
-            "Modules/Main/Sass/_iq_restr-main.scss"
         ]
     },
     "templates": {
@@ -60,6 +47,18 @@
                 ]
             }
         }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/Main/Sass/_iq_restr-main.scss",
+            "myaccount": "Modules/Main/Sass/_iq_restr-main.scss",
+            "checkout": "Modules/Main/Sass/_iq_restr-main.scss"
+        },
+        "files": [
+            "Modules/RestrictionMessage/Sass/_iq_restr-restriction-message.scss",
+            "Modules/FacetsItemCell/Sass/_iq_restriction-facets.scss",
+            "Modules/Main/Sass/_iq_restr-main.scss"
+        ]
     },
     "javascript": {
         "entry_points": {
@@ -103,6 +102,5 @@
             "Modules/Main/SuiteScript/IQ.RESTR.Main.js",
             "Modules/Profile/SuiteScript/IQ.RESTR.Profile.Model.js"
         ]
-    },
-    "local_folder": "Workspace/IQ_Restriction"
+    }
 }

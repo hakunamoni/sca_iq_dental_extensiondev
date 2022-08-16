@@ -31,57 +31,57 @@ define("IQ.RESTR.Cart.QuickAddToCart.View", [
           CartQuickAddToCartView.prototype.getContext,
           function (fn) {
             var context = fn.apply(this, _.toArray(arguments).slice(1));
-            // console.log(
-            //   "CartQuickAddToCartView this.model",
-            //   this.model.getItem().get("internalid")
-            // );
+            // // console.log(
+            // //   "CartQuickAddToCartView this.model",
+            // //   this.model.getItem().get("internalid")
+            // // );
 
-            var isAuthorized = true;
-            var isLoggedIn = ProfileModel.getInstance().isLoggedIn();
-            if (isLoggedIn) {
-              var customerId = ProfileModel.getInstance().get("internalid");
-              // console.log("CartQuickAddToCartView customerId", customerId);
+            // var isAuthorized = true;
+            // var isLoggedIn = ProfileModel.getInstance().isLoggedIn();
+            // if (isLoggedIn) {
+            //   var customerId = ProfileModel.getInstance().get("internalid");
+            //   // console.log("CartQuickAddToCartView customerId", customerId);
 
-              var restrictedCustomers = [
-                "4154197",
-                "4154299",
-                "4154300",
-                "4154301",
-                "4154402",
-                "4154403",
-                "4154404",
-                "1275490",
-              ];
-              // console.log(
-              //   "CartQuickAddToCartView restrictedCustomers",
-              //   restrictedCustomers
-              // );
-              // console.log(
-              //   "CartQuickAddToCartView checkAuthorized",
-              //   restrictedCustomers.indexOf(customerId)
-              // );
-              var checkAuthorized =
-                restrictedCustomers.indexOf(customerId) == -1 ? false : true;
-              // console.log(
-              //   "CartQuickAddToCartView checkAuthorized",
-              //   checkAuthorized
-              // );
+            //   var restrictedCustomers = [
+            //     "4154197",
+            //     "4154299",
+            //     "4154300",
+            //     "4154301",
+            //     "4154402",
+            //     "4154403",
+            //     "4154404",
+            //   ];
+            //   // console.log(
+            //   //   "CartQuickAddToCartView restrictedCustomers",
+            //   //   restrictedCustomers
+            //   // );
+            //   // console.log(
+            //   //   "CartQuickAddToCartView checkAuthorized",
+            //   //   restrictedCustomers.indexOf(customerId)
+            //   // );
+            //   var checkAuthorized =
+            //     restrictedCustomers.indexOf(customerId) == -1 ? false : true;
+            //   // console.log(
+            //   //   "CartQuickAddToCartView checkAuthorized",
+            //   //   checkAuthorized
+            //   // );
 
-              isAuthorized = checkAuthorized
-                ? this.model.get("isAuthorized")
-                : true;
-              // console.log("CartQuickAddToCartView isAuthorized", isAuthorized);
+            //   isAuthorized = checkAuthorized
+            //     ? this.model.get("isAuthorized")
+            //     : true;
+            //   // console.log("CartQuickAddToCartView isAuthorized", isAuthorized);
 
-              // if (this.model.get("isAuthorized")) {
-              //   console.log(
-              //     "CartQuickAddToCartView " +
-              //       this.model.getItem().get("internalid"),
-              //     this.model.get("isAuthorized")
-              //   );
-              // }
-            }
+            //   // if (this.model.get("isAuthorized")) {
+            //   //   console.log(
+            //   //     "CartQuickAddToCartView " +
+            //   //       this.model.getItem().get("internalid"),
+            //   //     this.model.get("isAuthorized")
+            //   //   );
+            //   // }
+            // }
+            // context.isAuthorized = isAuthorized;
 
-            context.isAuthorized = isAuthorized;
+            context.isAuthorized = this.model.get("isAuthorized");
             return context;
           }
         ),
