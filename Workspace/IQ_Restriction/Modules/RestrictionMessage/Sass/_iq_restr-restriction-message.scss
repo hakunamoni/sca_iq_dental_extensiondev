@@ -1,0 +1,9 @@
+.product-restriction-message {
+  font-size: $sc-font-size-s;
+  line-height: 24px;
+
+  &-title {
+    color: $sc-color-primary;
+    font-weight: $sc-font-weight-bold;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "modifications": [
+    {
+      "target": "$.resource.template.facets-item-cell",
+      "action": "add",
+      "value": "iq_restr_facets_item_cell_grid.tpl"
+    }
+  ]
+}

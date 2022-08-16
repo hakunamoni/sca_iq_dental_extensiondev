@@ -33,6 +33,7 @@
             "Workspace/DentalOrderApproval",
             "Workspace/DentalRegister",
             "Workspace/IQ_PO",
+            "Workspace/IQ_Restriction",
             "Workspace/PickupDelivery"
         ],
         "theme_path": "Workspace/Extras/DentalTheme",

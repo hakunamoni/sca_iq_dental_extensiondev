@@ -1,0 +1,11 @@
+{
+  "generator-extension": {
+    "ext_application": {
+      "IQ_Restriction": [
+        "shopping",
+        "myaccount",
+        "checkout"
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+    "name": "IQ_Restriction",
+    "fantasyName": "IQ Dental - Restriction",
+    "vendor": "Hakunamoni",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=22.1.0",
+        "SCS": ">=22.1.0"
+    },
+    "version": "1.0.0",
+    "description": "Restrict unapproved items for IQ Dental Supply",
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/FacetsItemCell/Configuration/IQ.RESTR.Facets.ItemCell.json"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/RestrictionMessage/Templates/iq_restr_restriction_message.tpl",
+                    "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
+                    "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/RestrictionMessage/Templates/iq_restr_restriction_message.tpl",
+                    "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
+                    "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/RestrictionMessage/Templates/iq_restr_restriction_message.tpl",
+                    "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
+                    "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl"
+                ]
+            }
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/Main/Sass/_iq_restr-main.scss",
+            "myaccount": "Modules/Main/Sass/_iq_restr-main.scss",
+            "checkout": "Modules/Main/Sass/_iq_restr-main.scss"
+        },
+        "files": [
+            "Modules/RestrictionMessage/Sass/_iq_restr-restriction-message.scss",
+            "Modules/FacetsItemCell/Sass/_iq_restriction-facets.scss",
+            "Modules/Main/Sass/_iq_restr-main.scss"
+        ]
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/Main/JavaScript/IQ.RESTR.Main.js",
+            "myaccount": "Modules/Main/JavaScript/IQ.RESTR.Main.js",
+            "checkout": "Modules/Main/JavaScript/IQ.RESTR.Main.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/Item/JavaScript/IQ.RESTR.Item.Model.js",
+                    "Modules/Main/JavaScript/IQ.RESTR.Main.js",
+                    "Modules/RestrictionMessage/JavaScript/IQ.RESTR.RestrictionMessage.View.js",
+                    "Modules/FacetsItemCell/JavaScript/IQ.RESTR.Facets.ItemCell.View.js",
+                    "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/Item/JavaScript/IQ.RESTR.Item.Model.js",
+                    "Modules/Main/JavaScript/IQ.RESTR.Main.js",
+                    "Modules/RestrictionMessage/JavaScript/IQ.RESTR.RestrictionMessage.View.js",
+                    "Modules/FacetsItemCell/JavaScript/IQ.RESTR.Facets.ItemCell.View.js",
+                    "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/Item/JavaScript/IQ.RESTR.Item.Model.js",
+                    "Modules/Main/JavaScript/IQ.RESTR.Main.js",
+                    "Modules/RestrictionMessage/JavaScript/IQ.RESTR.RestrictionMessage.View.js",
+                    "Modules/FacetsItemCell/JavaScript/IQ.RESTR.Facets.ItemCell.View.js",
+                    "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/Main/SuiteScript/IQ.RESTR.Main.js",
+        "files": [
+            "Modules/Main/SuiteScript/IQ.RESTR.Main.js",
+            "Modules/Profile/SuiteScript/IQ.RESTR.Profile.Model.js"
+        ]
+    }
+}
