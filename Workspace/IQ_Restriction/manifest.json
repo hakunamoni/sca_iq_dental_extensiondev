@@ -2,14 +2,15 @@
     "name": "IQ_Restriction",
     "fantasyName": "IQ Dental - Restriction",
     "vendor": "Hakunamoni",
+    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=22.1.0",
         "SCS": ">=22.1.0"
     },
-    "version": "1.0.0",
     "description": "Restrict unapproved items for IQ Dental Supply",
+    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -23,31 +24,6 @@
             "Modules/FacetsItemCell/Configuration/IQ.RESTR.Facets.ItemCell.json"
         ]
     },
-    "templates": {
-        "application": {
-            "shopping": {
-                "files": [
-                    "Modules/RestrictionMessage/Templates/iq_restr_restriction_message.tpl",
-                    "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
-                    "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl"
-                ]
-            },
-            "myaccount": {
-                "files": [
-                    "Modules/RestrictionMessage/Templates/iq_restr_restriction_message.tpl",
-                    "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
-                    "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl"
-                ]
-            },
-            "checkout": {
-                "files": [
-                    "Modules/RestrictionMessage/Templates/iq_restr_restriction_message.tpl",
-                    "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
-                    "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl"
-                ]
-            }
-        }
-    },
     "sass": {
         "entry_points": {
             "shopping": "Modules/Main/Sass/_iq_restr-main.scss",
@@ -59,6 +35,37 @@
             "Modules/FacetsItemCell/Sass/_iq_restriction-facets.scss",
             "Modules/Main/Sass/_iq_restr-main.scss"
         ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/RestrictionMessage/Templates/iq_restr_restriction_message.tpl",
+                    "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
+                    "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl",
+                    "Modules/ProductDetailsFull/Templates/iq_restr_product_details_full.tpl",
+                    "Modules/ProductDetailsQuickView/Templates/iq_restr_product_details_quickview.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/RestrictionMessage/Templates/iq_restr_restriction_message.tpl",
+                    "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
+                    "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl",
+                    "Modules/ProductDetailsFull/Templates/iq_restr_product_details_full.tpl",
+                    "Modules/ProductDetailsQuickView/Templates/iq_restr_product_details_quickview.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/RestrictionMessage/Templates/iq_restr_restriction_message.tpl",
+                    "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
+                    "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl",
+                    "Modules/ProductDetailsFull/Templates/iq_restr_product_details_full.tpl",
+                    "Modules/ProductDetailsQuickView/Templates/iq_restr_product_details_quickview.tpl"
+                ]
+            }
+        }
     },
     "javascript": {
         "entry_points": {
@@ -73,7 +80,9 @@
                     "Modules/Main/JavaScript/IQ.RESTR.Main.js",
                     "Modules/RestrictionMessage/JavaScript/IQ.RESTR.RestrictionMessage.View.js",
                     "Modules/FacetsItemCell/JavaScript/IQ.RESTR.Facets.ItemCell.View.js",
-                    "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js"
+                    "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js",
+                    "Modules/ProductDetailsFull/JavaScript/IQ.RESTR.ProductDetails.Full.View.js",
+                    "Modules/ProductDetailsQuickView/JavaScript/IQ.RESTR.ProductDetails.QuickView.View.js"
                 ]
             },
             "myaccount": {
@@ -82,7 +91,9 @@
                     "Modules/Main/JavaScript/IQ.RESTR.Main.js",
                     "Modules/RestrictionMessage/JavaScript/IQ.RESTR.RestrictionMessage.View.js",
                     "Modules/FacetsItemCell/JavaScript/IQ.RESTR.Facets.ItemCell.View.js",
-                    "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js"
+                    "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js",
+                    "Modules/ProductDetailsFull/JavaScript/IQ.RESTR.ProductDetails.Full.View.js",
+                    "Modules/ProductDetailsQuickView/JavaScript/IQ.RESTR.ProductDetails.QuickView.View.js"
                 ]
             },
             "checkout": {
@@ -91,7 +102,9 @@
                     "Modules/Main/JavaScript/IQ.RESTR.Main.js",
                     "Modules/RestrictionMessage/JavaScript/IQ.RESTR.RestrictionMessage.View.js",
                     "Modules/FacetsItemCell/JavaScript/IQ.RESTR.Facets.ItemCell.View.js",
-                    "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js"
+                    "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js",
+                    "Modules/ProductDetailsFull/JavaScript/IQ.RESTR.ProductDetails.Full.View.js",
+                    "Modules/ProductDetailsQuickView/JavaScript/IQ.RESTR.ProductDetails.QuickView.View.js"
                 ]
             }
         }
@@ -102,5 +115,6 @@
             "Modules/Main/SuiteScript/IQ.RESTR.Main.js",
             "Modules/Profile/SuiteScript/IQ.RESTR.Profile.Model.js"
         ]
-    }
+    },
+    "local_folder": "Workspace/IQ_Restriction"
 }

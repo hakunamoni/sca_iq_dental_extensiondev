@@ -58,7 +58,7 @@ define("Dental.DentalOrderApproval.DentalOrderApproval", [
         placeApprovalOrder: function () {
           var items = new Array();
           orderModel.get("lines").models.forEach(function (line) {
-            console.log("CartSummaryView line:" + JSON.stringify(line));
+            // console.log("CartSummaryView line:" + JSON.stringify(line));
             items.push({
               item: line.get("item").get("internalid"),
               type: line.get("item").get("type"),
@@ -70,7 +70,7 @@ define("Dental.DentalOrderApproval.DentalOrderApproval", [
 
             return true;
           });
-          console.log("CartSummaryView items:" + JSON.stringify(items));
+          // console.log("CartSummaryView items:" + JSON.stringify(items));
           var item_data = {
             items: items,
             customer: customerId,
@@ -114,7 +114,7 @@ define("Dental.DentalOrderApproval.DentalOrderApproval", [
           // var orderModel = LiveOrderModel.getInstance();
           var items = new Array();
           orderModel.get("lines").models.forEach(function (line) {
-            console.log("HeaderMiniCartView line:" + JSON.stringify(line));
+            // console.log("HeaderMiniCartView line:" + JSON.stringify(line));
             items.push({
               item: line.get("item").get("internalid"),
               type: line.get("item").get("type"),
@@ -126,7 +126,7 @@ define("Dental.DentalOrderApproval.DentalOrderApproval", [
 
             return true;
           });
-          console.log("HeaderMiniCartView items:" + JSON.stringify(items));
+          // console.log("HeaderMiniCartView items:" + JSON.stringify(items));
           var item_data = {
             items: items,
             customer: customerId,

@@ -2,13 +2,11 @@ define("IQ.RESTR.Cart.QuickAddToCart.View", [
   "Cart.QuickAddToCart.View",
   "IQ.RESTR.RestrictionMessage.View",
   "iq_restr_cart_quickaddtocart.tpl",
-  "Profile.Model",
   "underscore",
 ], function (
   CartQuickAddToCartView,
   RestrictionMessageView,
   iq_restr_cart_quickaddtocart,
-  ProfileModel,
   _
 ) {
   "use strict";
