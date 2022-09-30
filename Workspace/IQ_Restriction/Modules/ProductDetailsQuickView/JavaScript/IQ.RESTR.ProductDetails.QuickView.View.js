@@ -29,10 +29,10 @@ define("IQ.RESTR.ProductDetails.QuickView.View", [
           ProductDetailsQuickViewView.prototype.getContext,
           function (fn) {
             var context = fn.apply(this, _.toArray(arguments).slice(1));
-            console.log(
-              "ProductDetailsQuickViewView this.model.get('item')",
-              this.model.get("item")
-            );
+            // console.log(
+            //   "ProductDetailsQuickViewView this.model.get('item')",
+            //   this.model.get("item")
+            // );
             context.isAuthorized = this.model.get("item").isAuthorized();
             return context;
           }

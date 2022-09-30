@@ -4,16 +4,18 @@ define("IQ.RESTR.Main", [
   "IQ.RESTR.Cart.QuickAddToCart.View",
   "IQ.RESTR.ProductDetails.Full.View",
   "IQ.RESTR.ProductDetails.QuickView.View",
-  // "iq_restr_facets_item_cell_grid.tpl",
+  "IQ.RESTR.QuickAdd.View",
   "iq_restr_cart_quickaddtocart.tpl",
   "iq_restr_product_details_full.tpl",
   "iq_restr_product_details_quickview.tpl",
+  "iq_restr_quick_add_item.tpl",
 ], function (
   ItemModel,
   FacetsItemCellView,
   CartQuickAddToCartView,
   ProductDetailsFullView,
-  ProductDetailsQuickViewView
+  ProductDetailsQuickViewView,
+  QuickAddView
 ) {
   "use strict";
 
@@ -24,6 +26,7 @@ define("IQ.RESTR.Main", [
       CartQuickAddToCartView.loadModule(container);
       ProductDetailsFullView.loadModule(container);
       ProductDetailsQuickViewView.loadModule(container);
+      QuickAddView.loadModule(container);
     },
   };
 });

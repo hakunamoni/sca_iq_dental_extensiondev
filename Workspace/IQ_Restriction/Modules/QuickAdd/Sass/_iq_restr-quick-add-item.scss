@@ -1,0 +1,5 @@
+.quick-add-item-results-restricted {
+  @extend .item-results;
+  pointer-events: none;
+  background-color: #fbdddd;
+}

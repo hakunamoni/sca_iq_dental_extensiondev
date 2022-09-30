@@ -33,7 +33,8 @@
         "files": [
             "Modules/RestrictionMessage/Sass/_iq_restr-restriction-message.scss",
             "Modules/FacetsItemCell/Sass/_iq_restriction-facets.scss",
-            "Modules/Main/Sass/_iq_restr-main.scss"
+            "Modules/Main/Sass/_iq_restr-main.scss",
+            "Modules/QuickAdd/Sass/_iq_restr-quick-add-item.scss"
         ]
     },
     "templates": {
@@ -44,7 +45,8 @@
                     "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
                     "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl",
                     "Modules/ProductDetailsFull/Templates/iq_restr_product_details_full.tpl",
-                    "Modules/ProductDetailsQuickView/Templates/iq_restr_product_details_quickview.tpl"
+                    "Modules/ProductDetailsQuickView/Templates/iq_restr_product_details_quickview.tpl",
+                    "Modules/QuickAdd/Templates/iq_restr_quick_add_item.tpl"
                 ]
             },
             "myaccount": {
@@ -53,7 +55,8 @@
                     "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
                     "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl",
                     "Modules/ProductDetailsFull/Templates/iq_restr_product_details_full.tpl",
-                    "Modules/ProductDetailsQuickView/Templates/iq_restr_product_details_quickview.tpl"
+                    "Modules/ProductDetailsQuickView/Templates/iq_restr_product_details_quickview.tpl",
+                    "Modules/QuickAdd/Templates/iq_restr_quick_add_item.tpl"
                 ]
             },
             "checkout": {
@@ -62,7 +65,8 @@
                     "Modules/FacetsItemCell/Templates/iq_restr_facets_item_cell_grid.tpl",
                     "Modules/CartQuickAddToCart/Templates/iq_restr_cart_quickaddtocart.tpl",
                     "Modules/ProductDetailsFull/Templates/iq_restr_product_details_full.tpl",
-                    "Modules/ProductDetailsQuickView/Templates/iq_restr_product_details_quickview.tpl"
+                    "Modules/ProductDetailsQuickView/Templates/iq_restr_product_details_quickview.tpl",
+                    "Modules/QuickAdd/Templates/iq_restr_quick_add_item.tpl"
                 ]
             }
         }
@@ -82,7 +86,9 @@
                     "Modules/FacetsItemCell/JavaScript/IQ.RESTR.Facets.ItemCell.View.js",
                     "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js",
                     "Modules/ProductDetailsFull/JavaScript/IQ.RESTR.ProductDetails.Full.View.js",
-                    "Modules/ProductDetailsQuickView/JavaScript/IQ.RESTR.ProductDetails.QuickView.View.js"
+                    "Modules/ProductDetailsQuickView/JavaScript/IQ.RESTR.ProductDetails.QuickView.View.js",
+                    "Modules/QuickAdd/JavaScript/IQ.RESTR.QuickAdd.View.js",
+                    "Modules/QuickAdd/JavaScript/IQ.RESTR.QuickAdd.Item.View.js"
                 ]
             },
             "myaccount": {
@@ -93,7 +99,9 @@
                     "Modules/FacetsItemCell/JavaScript/IQ.RESTR.Facets.ItemCell.View.js",
                     "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js",
                     "Modules/ProductDetailsFull/JavaScript/IQ.RESTR.ProductDetails.Full.View.js",
-                    "Modules/ProductDetailsQuickView/JavaScript/IQ.RESTR.ProductDetails.QuickView.View.js"
+                    "Modules/ProductDetailsQuickView/JavaScript/IQ.RESTR.ProductDetails.QuickView.View.js",
+                    "Modules/QuickAdd/JavaScript/IQ.RESTR.QuickAdd.View.js",
+                    "Modules/QuickAdd/JavaScript/IQ.RESTR.QuickAdd.Item.View.js"
                 ]
             },
             "checkout": {
@@ -104,7 +112,9 @@
                     "Modules/FacetsItemCell/JavaScript/IQ.RESTR.Facets.ItemCell.View.js",
                     "Modules/CartQuickAddToCart/JavaScript/IQ.RESTR.Cart.QuickAddToCart.View.js",
                     "Modules/ProductDetailsFull/JavaScript/IQ.RESTR.ProductDetails.Full.View.js",
-                    "Modules/ProductDetailsQuickView/JavaScript/IQ.RESTR.ProductDetails.QuickView.View.js"
+                    "Modules/ProductDetailsQuickView/JavaScript/IQ.RESTR.ProductDetails.QuickView.View.js",
+                    "Modules/QuickAdd/JavaScript/IQ.RESTR.QuickAdd.View.js",
+                    "Modules/QuickAdd/JavaScript/IQ.RESTR.QuickAdd.Item.View.js"
                 ]
             }
         }
